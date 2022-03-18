@@ -16,8 +16,8 @@ io.on("connection", (socket) => {
     io.emit("crosswar", payload)
   })
 
-  socket.on("letters", (payload) => {
-    console.log(payload.row, payload.column, payload.character)
+  socket.on("guess", (payload) => {
+    console.log(payload.row, payload.col, payload.char)
 
     io.emit("crosswar", payload)
   })
