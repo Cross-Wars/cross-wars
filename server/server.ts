@@ -21,11 +21,6 @@ io.on("connection", (socket) => {
 
     io.emit("crosswar", payload)
   })
-  // socket.on("set", (payload) => {
-  //   console.log(payload.row, payload.column, payload.guess)
-
-  //   io.emit("set", payload)
-  // })
 })
 server.listen(9000, () => {
   console.log("connected localhost 9000")

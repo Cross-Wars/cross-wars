@@ -10,7 +10,6 @@ const reducer = combineReducers({
 export interface RootState {
   dataReducer: string
 }
-//type RootState = ReturnType<typeof reducer>
 
 const middleware = composeWithDevTools(
   applyMiddleware(thunkMiddleware, createLogger({ collapsed: true }))
