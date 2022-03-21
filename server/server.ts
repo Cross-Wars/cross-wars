@@ -10,16 +10,13 @@ io.on("connection", (socket) => {
   console.log("what is socket:" + socket.id)
   console.log("connected")
 
-  socket.on("crosswar", (payload) => {
-    console.log(payload.direction, payload.number, payload.answer)
+  // socket.on("guess", (payload) => {
+  //   console.log(payload.row, payload.col, payload.char)
 
-    io.emit("crosswar", payload)
-  })
-
-  socket.on("guess", (payload) => {
-    console.log(payload.row, payload.col, payload.char)
-
-    io.emit("crosswar", payload)
+  //   io.emit("crosswar", payload)
+  // })
+  socket.on('correctWord', (payload) => {
+    io.emit('newWord', payload)
   })
 })
 server.listen(9000, () => {
