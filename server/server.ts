@@ -7,16 +7,16 @@
 //   },
 // })
 
-let player = []
+let player = [];
 module.exports = (io) => {
-  io.on("connection", (socket) => {
-    console.log("what is socket:" + socket.id)
-    console.log("connected")
+  io.on('connection', (socket) => {
+    console.log('what is socket:' + socket.id);
+    console.log('connected');
     if (!player.includes(socket.id)) {
-      player.push(socket.id)
+      player.push(socket.id);
     }
 
-    console.log(player)
+    console.log(player);
 
     // socket.on("crosswar", (payload) => {
     //   console.log(payload.direction, payload.number, payload.answer)
@@ -24,19 +24,19 @@ module.exports = (io) => {
     //   io.emit("crosswar", payload)
     // })
 
-    socket.on("player", (payload) => {
-      console.log(payload.direction, payload.number, payload.answer)
+    socket.on('player', (payload) => {
+      console.log(payload.direction, payload.number, payload.answer);
 
-      io.emit("player", payload)
-    })
+      io.emit('player', payload);
+    });
 
-    socket.on("guess", (payload) => {
-      console.log(payload.row, payload.col, payload.char)
+    socket.on('guess', (payload) => {
+      console.log(payload.row, payload.col, payload.char);
 
-      io.emit("crosswar", payload)
-    })
-  })
-}
+      io.emit('crosswar', payload);
+    });
+  });
+};
 // server.listen(9000, () => {
 //   console.log("connected localhost 9000")
 // })
