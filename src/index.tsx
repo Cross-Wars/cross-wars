@@ -6,12 +6,16 @@ import reportWebVitals from "./reportWebVitals"
 import store from "./store/index"
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration"
 import { Provider } from "react-redux"
+import { Router } from "react-router-dom"
+import history from './history'
 
 ReactDOM.render(
   <Provider store={store}>
+    <Router history={history}>
     <React.StrictMode>
       <App />
     </React.StrictMode>
+    </Router>
   </Provider>,
   document.getElementById("root")
 )

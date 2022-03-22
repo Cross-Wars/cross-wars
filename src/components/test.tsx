@@ -1,7 +1,7 @@
 import React, { useRef, useCallback, useState, useEffect } from "react"
-import { crossBoard1 } from "./crossWord"
-import { getGuess } from "./store/data"
-import store from "./store"
+import { crossBoard1 } from "../crossWord"
+import { getGuess } from "../store/data"
+import store from "../store"
 
 import Crossword, {
   CrosswordImperative,
@@ -9,7 +9,7 @@ import Crossword, {
 } from "@jaredreisinger/react-crossword"
 import io from "socket.io-client"
 import { useSelector, useDispatch } from "react-redux"
-import { RootState } from "./store"
+import { RootState } from "../store"
 
 // console.log(crossBoard1)
 //console.log(CrosswordProvider.defaultProps?.theme?.focusBackground)

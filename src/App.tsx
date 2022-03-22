@@ -1,12 +1,12 @@
 import React from "react"
 
 import "./App.css"
-import MyPage from "./test"
+import Routes from "./components/Routes"
 
 function App() {
   return (
     <div style={{ height: 200, width: 400 }}>
-      <MyPage />
+      <Routes />
     </div>
   )
 }
