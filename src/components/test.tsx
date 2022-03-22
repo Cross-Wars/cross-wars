@@ -1,12 +1,12 @@
 import React, { useRef, useCallback, useState, useEffect } from "react"
-import { crossBoard1 } from "./crossWord"
-import { getGuess } from "./store/data"
-import store from "./store"
+import { crossBoard1 } from "../crossWord"
+import { getGuess } from "../store/data"
+import store from "../store"
 
 import Crossword, { CrosswordImperative } from "@jaredreisinger/react-crossword"
 import io from "socket.io-client"
 import { useSelector, useDispatch } from "react-redux"
-import { RootState } from "./store"
+import { RootState } from "../store"
 
 const socket = io("http://localhost:9000")
 
