@@ -56,7 +56,7 @@ export default function JoinOrCreateRoom(props) {
 
   return (
     <div>
-      <h1>🔪 CodeWars 🔪</h1>
+      <h1>🔪 CrossWars 🔪</h1>
       <form>
         <label htmlFor="username-input">Enter Your Username</label>
         <input
