@@ -7,28 +7,33 @@ import Crossword, {
   CrosswordImperative,
   CrosswordProvider,
 } from "@jaredreisinger/react-crossword"
-import io from "socket.io-client"
 import { useSelector, useDispatch } from "react-redux"
 import { RootState } from "../store"
+import socket from './socket'
 
 // console.log(crossBoard1)
 //console.log(CrosswordProvider.defaultProps?.theme?.focusBackground)
-console.log(Crossword)
+// console.log(Crossword)
 // console.log(crossBoard1.across[1].answer)
 
-const socket = io("http://localhost:8080")
 
-socket.on("connect", () => {
-  console.log("connected to server")
-  socket.on("crosswar", (payload) => {
-    store.dispatch(getGuess(payload.row, payload.col, payload.char))
-  })
-})
+// socket.on("connect", () => {
+//   console.log("connected to server")
+  // socket.on("crosswar", (payload) => {
+  //   store.dispatch(getGuess(payload.row, payload.col, payload.char))
+  // })
+// })
 
 export default function MyPage() {
   const guess = useSelector((state: RootState) => state.dataReducer)
 
   const crossword = useRef<CrosswordImperative>(null)
+
+  useEffect(() => {
+    socket.on('crosswar', (payload) => {
+      store.dispatch(getGuess(payload.row, payload.col, payload.char))
+    })
+  }, [])
 
   useEffect(() => {
     if (guess === "") {
